@@ -23,6 +23,5 @@ public class CreateInnerInstance {
         Out out = new Out();
         // 通过外部类实例和new来调用内部类构造器创建非静态内部类实例
         in = out.new In("测试信息2");
-
     }
 }
