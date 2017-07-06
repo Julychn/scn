@@ -1,22 +1,17 @@
 package lightProgram;
 
 /**
- * Description:
- * <br/>��վ: <a href="http://www.crazyit.org">���Java����</a>
- * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
- * <br/>This program is protected by copyright laws.
- * <br/>Program Name:
- * <br/>Date:
- * @author Yeeku.H.Lee kongyeeku@163.com
+ * Description: 数组工具类
+ * @author scn
  * @version 1.0
  */
 public class ArrayUtils
 {
 	/**
-	 * ����һ�����߷��������߷������ַ����������ҵ���Ӧ���ַ���Ԫ�ص�λ��
-	 * @param array ����������
-	 * @param target �������ַ���
-	 * @return Ŀ���ַ������ֵ�λ��,-1�����Ҳ���
+	 * 在数组中查找指定元素的索引，若没有该元素，返回-1
+	 * @param array 数组
+	 * @param target 要查找的元素值
+	 * @return 返回该元素在数组中对应的索引
 	 */
 	public static int search(String[] array, String target)
 	{

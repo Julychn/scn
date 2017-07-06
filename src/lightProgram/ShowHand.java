@@ -5,22 +5,118 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * 扑克牌类
+ * 提供扑克牌的大小比较方法
+ */
+class Poke {
+    // 定义扑克牌的所有花色和数值
+    public static final String[] types = {"♦", "♣", "♥", "♠"};
+    public static final String[] values = {"2", "3", "4", "5", "6", "7",
+            "8", "9", "10", "J", "Q", "K", "A"};
+
+    // 扑克牌的花色
+    private String type;
+    // 扑克牌的数值
+    private String value;
+
+    public Poke() {}
+    public Poke(String type, String value) {
+        this.type = type;
+        this.value = value;
+    }
+
+    /**
+     * 该方法用于设置一张扑克牌的面值
+     * @param type  扑克牌的花色
+     * @param value 扑克牌的数值
+     */
+    public void set(String type, String value) {
+        this.type = type;
+        this.value = value;
+    }
+
+    /**
+     * 该方法用于返回一张扑克牌的数值，用于比较扑克牌大小
+     * @return 返回一个double类型的数值
+     */
+    public double getFigure() {
+        return ArrayUtils.search(values, value) + 0.1 * ArrayUtils.search(types, type);
+    }
+
+    /**
+     * 该方法用于比较两张扑克牌的大小
+     * @param desPoke 待比较的目标扑克牌
+     * @return 若当前扑克牌大于目标扑克牌，返回1；小于目标扑克牌，返回-1；相等返回0（理论上不可能相等）
+     */
+    public int compareTo(Poke desPoke) {
+        // 直接根据getFigure()方法返回的double数值来判断
+        return Double.compare(this.getFigure(), desPoke.getFigure());
+    }
+
+    /**
+     * 该方法用于比较多张扑克牌中最大的一张并返回该扑克牌
+     * @param pokes 一组扑克牌，至少2张
+     * @return 最大的扑克牌
+     */
+    public Poke max(Poke... pokes) {
+        if (pokes.length < 1) {
+            System.out.println("请输入要比较的扑克牌！");
+            return null;
+        }
+        Poke maxPoke = new Poke();
+        for (int i = 0; i < pokes.length - 1; i++) {
+            if (pokes[i].compareTo(pokes[i + 1]) == 1) {
+                maxPoke = pokes[i];
+            } else {
+                maxPoke = pokes[i + 1];
+            }
+        }
+        // 上面的maxPoke实际上引用的是原来的扑克牌，这里重写创建一张扑克牌，并把maxPoke中的花色数值赋给他
+        return new Poke(maxPoke.getType(), maxPoke.getValue());
+    }
+
+    /**
+     * 重写Object的toString()方法
+     * @return 返回扑克牌，如红心2即为"♥2"
+     */
+    @Override
+    public String toString() {
+        return type + value;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+}
+
+/**
  * Created by scn on 2017/7/6.
  * 梭哈游戏
  */
 public class ShowHand {
     // 定义该游戏最多支持多少个玩家
     private final int PLAY_NUM = 5;
-    // 定义扑克牌的所有花色和数值
-    private String[] types = {"方块", "草花", "红心", "黑桃"};
-    private String[] values = {"2", "3", "4", "5", "6", "7",
-                        "8", "9", "10", "J", "Q", "K", "A"};
+    // 定义两个String数组，分别指向Poke类的types和values数组
+    private String[] types = Poke.types;
+    private String[] values = Poke.values;
     // cards是一局游戏中剩余的扑克牌，用一个LinkedList集合来存储
-    private List<String> cards = new LinkedList<String>();
+    private List<Poke> cards = new LinkedList<Poke>();
     // 定义所有的玩家
     private String[] players = new String[PLAY_NUM];
     // 所有玩家手上的扑克牌，使用列表数组保存
-    private List<String>[] playersCards = new List[PLAY_NUM];
+    private List<Poke>[] playersCards = new List[PLAY_NUM];
 
     /**
      * 初始化扑克牌方法，给cards放入52张扑克牌
@@ -29,7 +125,7 @@ public class ShowHand {
     public void initCards() {
         for (int i = 0; i < types.length; i++) {
             for (int j = 0; j < values.length; j++) {
-                cards.add(types[i] + values[j]);
+                cards.add(new Poke(types[i], values[j]));
             }
         }
         // 随机排列
@@ -63,7 +159,7 @@ public class ShowHand {
         for (int i = 0; i < players.length; i++) {
             // 此处由于玩家数量可能小于玩家数量上限，需要对玩家数组中为null的值进行判断
             if (players[i] != null && !players[i].equals("")) {
-                playersCards[i] = new LinkedList<String>();
+                playersCards[i] = new LinkedList<Poke>();
             }
         }
     }
@@ -73,8 +169,8 @@ public class ShowHand {
      * 仅用作测试
      */
     public void showAllCards() {
-        for (String card : cards) {
-            System.out.print(card + " ");
+        for (Poke card : cards) {
+            System.out.print(card.toString() + " ");
         }
     }
 
@@ -119,7 +215,7 @@ public class ShowHand {
                 // 输出玩家名称
                 System.out.print(players[i] + "：");
                 // 遍历输出玩家手上的扑克牌
-                for (String card : playersCards[i]) {
+                for (Poke card : playersCards[i]) {
                     System.out.print("\t" + card);
                 }
             }
@@ -142,6 +238,7 @@ public class ShowHand {
         // 从"唐僧"开始派牌
         sh.deliverCard("孙悟空");
         sh.showPlayerCards();
+
         /*
         此处应该增加处理
         1.牌面最大的玩家下注
