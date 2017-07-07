@@ -13,7 +13,7 @@
 --------
 ### 1.ArrayUtils类：
 
-实现了ArrayUtils类的static int search(String[] array, String target)方法\n
+实现了ArrayUtils类的static int search(String[] array, String target)方法</b>
 该方法用于在数组中查找指定元素的索引，若没有该元素，则返回-1
 
 ### 2.梭哈小游戏：
