@@ -18,6 +18,7 @@
 * Java7新增的多异常捕获
 * Java7的自动关闭资源的try语句
 * Checked异常和Runtime异常
+* 同时使用catch和throw
 
 2017/07/06更新：
 --------
