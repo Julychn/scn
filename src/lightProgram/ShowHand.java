@@ -112,7 +112,7 @@ public class ShowHand {
     private String[] types = Poke.types;
     private String[] values = Poke.values;
     // cards是一局游戏中剩余的扑克牌，用一个LinkedList集合来存储
-    private List<Poke> cards = new LinkedList<Poke>();
+    private List<Poke> cards = new LinkedList<>();
     // 定义所有的玩家
     private String[] players = new String[PLAY_NUM];
     // 所有玩家手上的扑克牌，使用列表数组保存
@@ -138,16 +138,27 @@ public class ShowHand {
      * @param names 多个玩家用户名
      */
     public void initPlayers(String... names) {
-        if (names.length > PLAY_NUM || names.length < 2) {
-            // 校验玩家数量，此处使用异常机制更合理
-            System.out.println("玩家数量不对");
-            return ;
-        } else {
+        try {
             // 初始化玩家用户名
             for (int i = 0; i < names.length; i++) {
                 players[i] = names[i];
             }
+        } catch (NullPointerException ne) {
+            System.out.println("请输入至少2名玩家！");
+        } catch (IndexOutOfBoundsException ie) {
+            System.out.println("玩家数量超过限制，最多5名玩家！");
         }
+
+//        if (names.length > PLAY_NUM || names.length < 2) {
+//            // 校验玩家数量，此处使用异常机制更合理
+//            System.out.println("玩家数量不对");
+//            return ;
+//        } else {
+//            // 初始化玩家用户名
+//            for (int i = 0; i < names.length; i++) {
+//                players[i] = names[i];
+//            }
+//        }
     }
 
     /**
@@ -227,7 +238,7 @@ public class ShowHand {
     public static void main(String[] args) {
         ShowHand sh = new ShowHand();
         // 初始化玩家，输入名称
-        sh.initPlayers("孙悟空", "猪八戒", "沙僧", "唐僧");
+        sh.initPlayers("孙悟空", "猪八戒", "沙僧", "唐僧", "哪吒");
         // 初始化扑克牌
         sh.initCards();
         // 初始化每个玩家手中的牌
