@@ -12,7 +12,14 @@
 * 使用Statement的execute()方法执行任意的SQL语句
 * 使用PreparedStatement执行SQL语句：性能更好，无须拼接Sql语句，防止Sql注入。
 * 使用CallableStatement调用存储过程
-* 创建可滚动、可更新的结果集
+* 创建可滚动、可更新的结果集(必须来自同一个表并包含主键)
+
+### 2.简易图片管理程序
+
+* 程序路径：src/lightProgram/ImageManager.java
+* 通过Blob将图片保存到数据库中
+* 图形化界面本地选择上传图片
+* 查询数据库表中的图片并显示
 
 2017/07/09:
 --------
