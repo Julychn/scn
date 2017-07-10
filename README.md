@@ -11,6 +11,8 @@
 * 使用Statement的executeUpdate()方法执行DML和DDL语句
 * 使用Statement的execute()方法执行任意的SQL语句
 * 使用PreparedStatement执行SQL语句：性能更好，无须拼接Sql语句，防止Sql注入。
+* 使用CallableStatement调用存储过程
+* 创建可滚动、可更新的结果集
 
 2017/07/09:
 --------
