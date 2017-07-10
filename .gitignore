@@ -24,4 +24,6 @@ hs_err_pid*
 # project files
 .idea/
 *.iml
+
+# 过滤数据库配置文件
 mysql.properties
