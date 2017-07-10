@@ -16,7 +16,7 @@ public class ConnMySQL {
             // 不同数据库的URL写法需要查驱动文档，用户名、密码由DBA分配
             Connection conn = DriverManager.getConnection(
                     "jdbc:mysql://120.27.111.133:3306/select_test",
-                    "root", "zhudan5293");
+                    "root", "");
             // 3.使用Connection来创建一个Statement对象
             Statement stmt = conn.createStatement();
             // 4.执行SQL语句
