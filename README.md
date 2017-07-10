@@ -7,8 +7,9 @@
 ### 1.JDBC
 
 * JDBC基础编程
-* 使用executeQuery执行sql查询语句
-* 使用executeUpdate执行DML和DDL语句
+* 使用Statement的executeQuery()方法执行sql查询语句
+* 使用Statement的executeUpdate()方法执行DML和DDL语句
+* 使用Statement的execute()方法执行任意的SQL语句
 
 2017/07/09:
 --------
