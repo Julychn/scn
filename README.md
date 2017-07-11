@@ -7,6 +7,7 @@
 ### 1.JDBC
 
 * 使用ResultSetMetaData分析结果集
+* 使用RowSetFactory来创建JdbcRowSet实例
 
 2017/07/10:
 --------
