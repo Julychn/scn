@@ -10,6 +10,9 @@
 * 使用RowSetFactory创建JdbcRowSet
 * CachedRowSet测试(离线RowSet)
 * 离线RowSet(CachedRowSet)的查询分页
+* JDBC的事务支持
+* 使用Java8增强的批量更新：addBatch()和executeBatch()方法
+* 使用DatabaseMetaData分析数据库信息
 
 2017/07/10:
 --------
