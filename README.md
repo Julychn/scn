@@ -7,7 +7,8 @@
 ### 1.JDBC
 
 * 使用ResultSetMetaData分析结果集
-* 使用RowSetFactory来创建JdbcRowSet实例
+* 使用RowSetFactory创建JdbcRowSet
+* CachedRowSet测试(离线RowSet)
 
 2017/07/10:
 --------
