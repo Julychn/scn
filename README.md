@@ -9,6 +9,7 @@
 * 使用ResultSetMetaData分析结果集
 * 使用RowSetFactory创建JdbcRowSet
 * CachedRowSet测试(离线RowSet)
+* 离线RowSet(CachedRowSet)的查询分页
 
 2017/07/10:
 --------
