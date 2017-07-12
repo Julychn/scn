@@ -14,7 +14,7 @@
 * FileOutputStream、FileWriter用法
 * 使用PrintStream处理流来包装OutputStream节点流
 * 使用字符串作为物理节点的字符输入/输出流
-* 转换流
+* 转换流：由于BufferedReader具有readLine()方法，可以非常方便地一次读入一行的内容，所以经常把读取文本的输入流包装成BufferedReader
 
 2017/07/11:
 --------
