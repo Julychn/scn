@@ -26,5 +26,6 @@ hs_err_pid*
 *.iml
 *.xml
 
-# 过滤数据库配置文件
 mysql.properties
+out/
+src/ch12/
