@@ -10,7 +10,8 @@
 
 * File类访问本地文件系统
 * 文件过滤器 FilenameFilter
-* FileInputStream测试
+* FileInputStream、FileReader用法
+* FileOutputStream、FileWriter用法
 
 2017/07/11:
 --------
