@@ -12,6 +12,7 @@
 * Path、Paths和Files核心API
 * 使用FileVisitor来遍历文件和目录
 * 使用WatchService监控文件变化
+* 访问文件属性
 
 2017/07/12:
 --------
