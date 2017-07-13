@@ -9,7 +9,9 @@
 * 对象序列化、对象引用的序列化
 * 使用Buffer和Channel
 * 文件锁
+* Path、Paths和Files核心API
 * 使用FileVisitor来遍历文件和目录
+* 使用WatchService监控文件变化
 
 2017/07/12:
 --------
