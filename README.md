@@ -12,7 +12,8 @@
 实现Runnable接口创建线程类(共享线程类的实例变量)、
 使用Callable和Future创建线程
 * 控制线程：join线程、后台线程、线程睡眠(sleep)、线程让步(yield)、改变线程优先级
-
+* 同步代码块，同步方法synchronized
+* 同步锁：ReentrantLock锁(具有重入性)
 
 2017/07/13:
 --------
