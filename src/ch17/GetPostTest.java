@@ -50,7 +50,7 @@ public class GetPostTest {
                 }
             }
         } catch (IOException e) {
-            System.out.println("发哦少年宫Get请求出现异常！" + e);
+            System.out.println("发送Get请求出现异常！" + e);
             e.printStackTrace();
         }
         return result.toString();
