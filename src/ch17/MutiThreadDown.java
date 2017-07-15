@@ -14,7 +14,7 @@ public class MutiThreadDown {
         downUtil.download();
         new Thread(() -> {
             while (downUtil.getCompleteRate() < 1) {
-                // 每隔0.1秒查询一次任务的完成进度
+                // 每隔1秒查询一次任务的完成进度
                 System.out.println("已完成：" + downUtil.getCompleteRate());
                 try {
                     Thread.sleep(1000);
